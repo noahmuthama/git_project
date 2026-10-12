@@ -16,6 +16,7 @@
          border-radius: 12px;
          display: flex;
          align-items: center;
+         
     }
 
     .topnav a{
@@ -24,13 +25,29 @@
         padding: 16px 16px ;
     }
 
-    .topnav h1{
+    .topnav h4{
         font-size: 24px;
-        padding: px 20px;
+        padding: 0px 20px;
         margin: 0;
         
 
     }
+
+.next-button{
+    text-align: center;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border-radius: 5px solid blue;
+    border-radius: 12px;
+}
+    
+
+  
+
+    
      .footer{
     text-align: center;
     position: relative;
@@ -41,14 +58,38 @@
     <main>
        <div>
         <nav class="topnav">
-            <h1>Vet-Connect-clinic</h1>
-            <a href="landingpage.html">home</a>
+            <h4>Vet-Connect-clinic</h4>
+            <a href="index.html">login</a>
             <a href="accept.html">services</a>
             <a href="records.html">records</a>
             <a href="status.html">status</a>
             
         </nav>
        </div> 
+       <br><br>
+
+       <h3>Welcome john </h3>
+
+       <section>
+        <div class="Welcome">
+            <p> Select your preferred service and get connected to the most reliable 
+                veterinary clinic on a click of a button
+            </p>
+            <label for="services">services</label>
+            <select name="services" id="services">
+                <option value="">select preferred service</option>
+                <option value="booking">book clinical visit</option>
+                <option value="farm-visit">Request farm-visit</option>
+                <option value="Emergency">Emergency</option>
+            </select>
+        </div>
+       </section>
+       <br>
+
+       <form action="accept.html" class="next-button">
+        <button >call Request</button>
+     </form>
+        
     </main>
     
 </body>
