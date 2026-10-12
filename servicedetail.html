@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Check-up | PawPoint Vet</title>
+    <style>
+      /* DEV NOTE: same cheap css pasted in every page. change colours here (the :root bit) */
+      :root {
+        --main: #2d6a4f;
+        --dark: #1b4332;
+        --accent: #f4a300;
+        --bg: #faf8f3;
+        --text: #222;
+        --muted: #666;
+        --ok: #d8f3dc;
+        --warn: #fff3cd;
+        --err: #f8d7da;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+      }
+      a {
+        color: var(--main);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        background: #ddd;
+      }
+      header {
+        background: var(--main);
+        padding: 10px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      header a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .logo {
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      section {
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+      }
+      .small {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-block;
+        padding: 8px 14px;
+        background: var(--main);
+        color: #fff !important;
+        text-decoration: none;
+        border: 2px solid var(--main);
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: var(--dark);
+      }
+      .btn.alt {
+        background: #fff;
+        color: var(--main) !important;
+      }
+      .btn.alt:hover {
+        background: var(--ok);
+      }
+      .btn[disabled] {
+        background: #ccc;
+        border-color: #ccc;
+        cursor: not-allowed;
+      }
+      header .btn {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #222 !important;
+      }
+      a:focus,
+      button:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 12px;
+        border-radius: 6px;
+      }
+      .card p {
+        margin: 6px 0;
+      }
+      ul.plain {
+        list-style: none;
+        padding: 0;
+      }
+      @media (min-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          align-items: center;
+        }
+      }
+      @media (min-width: 1000px) {
+        .grid.three {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .grid.four {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        border: 1px solid #999;
+      }
+      .b-ok {
+        background: var(--ok);
+      }
+      .b-wait {
+        background: var(--warn);
+      }
+      .b-done {
+        background: #e2e3e5;
+      }
+      .b-bad {
+        background: var(--err);
+      }
+      .box {
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 6px solid;
+        margin: 10px 0;
+      }
+      .success {
+        background: var(--ok);
+        border-color: #2d6a4f;
+      }
+      .warning {
+        background: var(--warn);
+        border-color: #e0a800;
+      }
+      .error {
+        background: var(--err);
+        border-color: #c0392b;
+      }
+      .empty {
+        background: #fff;
+        border: 2px dashed #aaa;
+        text-align: center;
+        padding: 24px;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        background: #fff;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 6px 8px;
+        text-align: left;
+        white-space: nowrap;
+      }
+      th {
+        background: #eee;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 1rem;
+        border: 1px solid #888;
+        border-radius: 4px;
+      }
+      fieldset {
+        border: 1px solid #ccc;
+        background: #fff;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        padding: 12px;
+      }
+      legend {
+        font-weight: bold;
+        padding: 0 6px;
+      }
+      .err-text {
+        color: #a02020;
+        font-size: 0.9rem;
+      }
+      .cta {
+        background: var(--main);
+        color: #fff;
+        text-align: center;
+        padding: 24px;
+        border-radius: 6px;
+      }
+      .cta h2 {
+        margin-top: 0;
+      }
+      .cta .btn {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #222 !important;
+      }
+      footer {
+        background: #222;
+        color: #ddd;
+        padding: 16px;
+        font-size: 0.9rem;
+      }
+      footer a {
+        color: #fff;
+      }
+      footer .grid {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .big {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 0;
+      }
+      blockquote {
+        margin: 0;
+      }
+      @media (min-width: 768px) {
+        .wrap {
+          display: flex;
+        }
+        .wrap aside {
+          width: 200px;
+          flex-shrink: 0;
+        }
+        .wrap main {
+          flex: 1;
+          max-width: none;
+          margin: 0;
+        }
+      }
+      aside {
+        background: #e9efe9;
+        padding: 12px;
+      }
+      aside ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      aside a {
+        display: block;
+        padding: 6px 8px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">🐾 PawPoint Vet</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="dashboard.html">My Pets</a></li>
+          <li><a href="status.html">Queue</a></li>
+          <li><a href="book.html" class="btn">Book a Visit</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- DEV NOTE: detail page. only one service is written out, copy it for the others -->
+      <p class="small"><a href="services.html">&larr; Back to services</a></p>
+      <h1>General Check-up</h1>
+      <section class="hero">
+        <img
+          src="images/service1.jpg"
+          alt="Vet listening to a dog's heartbeat"
+          width="500"
+          height="350"
+        />
+        <div class="card">
+          <p>
+            A full check-up with a qualified vet. We look at weight, heart,
+            teeth, skin, ears and eyes, then talk through anything we find.
+          </p>
+          <p><strong>Duration:</strong> 30 minutes</p>
+          <p><strong>Price:</strong> From KES 1,500</p>
+          <a class="btn" href="book.html">Book This Service</a>
+        </div>
+      </section>
+      <section class="grid">
+        <div class="card">
+          <h2>What it involves</h2>
+          <ul>
+            <li>Weight and temperature check</li>
+            <li>Heart and lung listen</li>
+            <li>Teeth, skin and coat check</li>
+            <li>Advice on food and exercise</li>
+            <li>Update to your pet's health record</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Benefits</h2>
+          <ul>
+            <li>Catch problems early</li>
+            <li>Cheaper than treating late</li>
+            <li>Records saved online</li>
+            <li>Peace of mind</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>How to prepare</h2>
+          <ul>
+            <li>Bring past vaccine cards if you have them</li>
+            <li>Write down any symptoms</li>
+            <li>Keep dogs on a leash, cats in a carrier</li>
+            <li>Don't feed a big meal an hour before</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Vets who offer this</h2>
+          <ul>
+            <li>Dr. Sarah Wanjiku</li>
+            <li>Dr. Grace Njeri</li>
+            <li>Dr. James Otieno</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cta">
+        <h2>Ready to book?</h2>
+        <a class="btn" href="book.html">Book This Service</a>
+      </section>
+    </main>
+    <footer>
+      <!-- DEV NOTE: footer is the same on every page. swap the fake details for real ones later -->
+      <div class="grid three">
+        <section>
+          <h2>PawPoint Vet</h2>
+          <p>Book your pet in online. Keep their records in one place.</p>
+        </section>
+        <section>
+          <h2>Visit &amp; contact</h2>
+          <address>
+            PawPoint Veterinary Centre<br />Ngong Road, Nairobi<br />Tel:
+            <a href="tel:+254712345678">+254 712 345 678</a><br /><a
+              href="mailto:hello@pawpointvet.co.ke"
+              >hello@pawpointvet.co.ke</a
+            >
+          </address>
+          <p>
+            Mon–Fri 8:00 AM – 6:00 PM<br />Sat 9:00 AM – 2:00 PM<br />Emergencies:
+            24/7
+          </p>
+        </section>
+        <section>
+          <h2>Links</h2>
+          <ul class="plain">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="book.html">Book a Visit</a></li>
+            <li><a href="dashboard.html">My Dashboard</a></li>
+            <li><a href="status.html">Queue Status</a></li>
+          </ul>
+          <p>
+            <a href="#">Facebook</a> · <a href="#">Instagram</a> ·
+            <a href="#">X</a>
+          </p>
+        </section>
+      </div>
+      <p class="small">
+        &copy; 2026 PawPoint Vet. Fictional clinic for a class project.
+      </p>
+    </footer>
+  </body>
+</html>
