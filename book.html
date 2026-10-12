@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Visit | PawPoint Vet</title>
     <style>
-      /* DEV NOTE: same cheap css pasted in every page. change colours here (the :root bit) */
+     
       :root {
         --main: #2d6a4f;
         --dark: #1b4332;
@@ -15,7 +15,6 @@
         --muted: #666;
         --ok: #d8f3dc;
         --warn: #fff3cd;
-        --err: #f8d7da;
       }
       body {
         font-family: Arial, sans-serif;
@@ -326,8 +325,7 @@
       </nav>
     </header>
     <main>
-      <!-- DEV NOTE: the form does NOT submit. the Confirm button is a link to confirmation.html -->
-      <!-- DEV NOTE: phone field shows the example error on purpose -->
+     
       <h1>Book a Visit</h1>
       <p>Fill in the three sections below. It takes about two minutes.</p>
       <form action="#" method="post">
@@ -359,8 +357,8 @@
             aria-invalid="true"
             required
           />
-          <p id="phone-err" class="err-text">
-            ⚠ Enter a valid phone number, e.g. 0712 345 678
+          <p id="phone-err" >
+            Enter a valid phone number, e.g. 0712 345 678
           </p>
           <label for="pet">Pet's name</label>
           <input type="text" id="pet" name="pet" required />
@@ -412,7 +410,7 @@
       </form>
     </main>
     <footer>
-      <!-- DEV NOTE: footer is the same on every page. swap the fake details for real ones later -->
+      
       <div class="grid three">
         <section>
           <h2>PawPoint Vet</h2>
