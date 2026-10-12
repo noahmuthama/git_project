@@ -10,7 +10,7 @@ So the idea is simple: put the clinic online. Owners can see services, book a vi
 
 This is a front-end project, so it's only HTML and CSS. Nothing actually submits or saves. It's all static pages that show how the thing would look and work.
 
-**Live site:** _add your link here_
+**Live site:** [https://noahmuthama.github.io/git_project/]
 
 ## Pages
 
