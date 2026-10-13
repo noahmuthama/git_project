@@ -13,13 +13,14 @@
     }
 
     .topnav{
-        background-color: black;
+       
          background-color: black;
          color: white;
          border: 20px solid black;
          border-radius: 12px;
          display: flex;
          align-items: center;
+         flex-wrap: wrap;
          
     }
 
@@ -37,6 +38,21 @@
 
     }
 
+    @media(max-width:600px){
+        
+            .topnav{border-width: 8px;
+        }
+        .topnav h4 {
+        width: 100%;
+        padding: 0 0 8px 0;
+    }
+
+    .topnav a {
+        padding: 8px 10px;
+    }
+
+        
+    }
     img{
     width: 200px;
 }
