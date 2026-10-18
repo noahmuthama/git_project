@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+    color: white;
+    margin: 20px ;
+
+}
+
+article{
+    background-color: blue;
+    border-radius: 12px;
+    border: 5px solid blue ;
+}
+ 
+.cards-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px ;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+article .cards{
+    flex:1;
+    min-width: 250px;
+    padding: 12px;
+}
+
+article img{
+    width: 350px;
+}
+
+.clinics-row{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+   overflow-x: auto;
+    padding: 12px;
+}
+
+.clinics{
+   flex: 1 0 200px;
+  text-align: center;
+
+}
+
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+@media (max-width:600px) {
+    body{
+        padding: 10px;
+    }
+    .clinics{
+        flex:1 0 200px;
+}
+    
+}
