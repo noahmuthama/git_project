@@ -59,6 +59,29 @@ img{
     height:auto;
 }
 
+.top-nav{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px 20px ;
+}
+
+.top-nav a{
+    color: white;
+    text-decoration: none;
+
+}
+
+.top-links{
+    display: flex;
+    gap: 20px;
+}
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -66,7 +89,7 @@ img{
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: blue;
+  background-color: black;
   padding: 15px 0;
 }
 
@@ -82,5 +105,6 @@ img{
     .clinics{
         flex:1 0 200px;
 }
-    
+
+
 }
