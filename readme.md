@@ -92,7 +92,7 @@ Every badge has text and a symbol, so colour is never the only clue.
 
 I used plain CSS media queries, not a framework.
 
-- **Mobile (375px):** one column. The nav wraps so it fits the screen. The staff sidebar sits on top of the page.
+- **Mobile (600px):** one column. The nav wraps so it fits the screen. The staff sidebar sits on top of the page.
 - **Tablet (768px):** two column grids. The hero splits into text and image.
 - **Desktop (1000px+):** three and four column grids. The staff page gets a sidebar next to the table.
 - Wide tables sit inside a `.scroll` box so they scroll sideways instead of breaking the page.
