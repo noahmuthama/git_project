@@ -4,9 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        margin: 20px;
+      }
+
+      /* Header */
+      nav {
+        background-color: black;
+        padding: 15px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+      }
+
+      /* Blue boxes */
+      article {
+        background-color: blue;
+        border-radius: 12px;
+        border: 5px solid blue;
+        color: white;
+      }
+
+      article a {
+        color: white;
+        text-decoration: none;
+        background-color: black;
+        border-radius: 12px;
+        border: 12px solid black;
+      }
+
+      .cards-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      article .cards {
+        flex: 1;
+        min-width: 250px;
+        padding: 12px;
+      }
+
+      article img {
+        width: 350px;
+      }
+
+      /* Featured clinics stay horizontal */
+      .clinics-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 12px;
+      }
+
+      .clinics {
+        flex: 1 0 200px;
+        text-align: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Footer */
+      footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .clinics {
+          flex: 1 0 200px;
+        }
+      }
+    </style>
   </head>
   <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="accept.html">Services</a>
+      <a href="records.html">Records</a>
+      <a href="status.html">Status</a>
+    </nav>
+
     <main>
       <section class="hero">
         <div class="heroclass">
@@ -28,62 +126,63 @@
           </p>
         </div>
       </section>
-       <div class="cards-row">
-      <article class="cards">
-        <legend>Animal Categories</legend>
-        <ol>
-          <li>Dogs</li>
-          <li>Cats</li>
-          <li>cattle</li>
-          <li>sheep</li>
-          <li>pigs</li>
-          <li>poultry</li>
-          <li>horses</li>
-        </ol>
-      </article>
 
-      <article class="cards">
-        <legend>Popular veterinary services</legend>
-        <ol>
-          <li>General consultation</li>
-          <li>Vaccination</li>
-          <li>Surgery</li>
-          <li>Emergency care</li>
-          <li>Livestock health</li>
-          <li>Disease diagnosis</li>
-          <li>Deworming</li>
-          <li>Animal nutrition</li>
-        </ol>
-      </article>
+      <div class="cards-row">
+        <article class="cards">
+          <legend>Animal Categories</legend>
+          <ol>
+            <li>Dogs</li>
+            <li>Cats</li>
+            <li>cattle</li>
+            <li>sheep</li>
+            <li>pigs</li>
+            <li>poultry</li>
+            <li>horses</li>
+          </ol>
+        </article>
+
+        <article class="cards">
+          <legend>Popular veterinary services</legend>
+          <ol>
+            <li>General consultation</li>
+            <li>Vaccination</li>
+            <li>Surgery</li>
+            <li>Emergency care</li>
+            <li>Livestock health</li>
+            <li>Disease diagnosis</li>
+            <li>Deworming</li>
+            <li>Animal nutrition</li>
+          </ol>
+        </article>
       </div>
 
       <article>
         <legend>Featured clinics</legend>
         <div class="clinics-row">
-        <div class="clinics">
-          <h1>Maji Mazuri Veterinary Clinic</h1>
-          <img src="images/zuri.png" alt="maji mazuri vet">
-          <p>Nairobi</p>
-          <p>★★★★★</p>
-          <p>Small Animals . Vaccination . Surgery</p>
-          <a href=""> View clinic</a>
-        </div>
-        <div class="clinics">
-          <h1>Wema Veterinary Clinic</h1>
-          <img src="images/wema.png" alt="wema vet clinic">
-          <p>Kiambu</p>
-          <p>★★★★★</p>
-          <p>Emergency care . Vaccination . Disease diagnostics</p>
-          <a href=""> View clinic</a>
-        </div>
-        <div class="clinics">
-          <h1>Wega Veterinary Clinic</h1>
-          <img src="images/wega.png" alt="wega vet clinic">
-          <p>Nairobi</p>
-          <p>★★★★★</p>
-          <p>Animal Nutrition . Deworming . Surgery</p>
-          <a href=""> View clinic</a>
-        </div>
+          <div class="clinics">
+            <h1>Maji Mazuri Veterinary Clinic</h1>
+            <img src="images/zuri.png" alt="maji mazuri vet" />
+            <p>Nairobi</p>
+            <p>★★★★★</p>
+            <p>Small Animals . Vaccination . Surgery</p>
+            <a href=""> View clinic</a>
+          </div>
+          <div class="clinics">
+            <h1>Wema Veterinary Clinic</h1>
+            <img src="images/wema.png" alt="wema vet clinic" />
+            <p>Kiambu</p>
+            <p>★★★★★</p>
+            <p>Emergency care . Vaccination . Disease diagnostics</p>
+            <a href=""> View clinic</a>
+          </div>
+          <div class="clinics">
+            <h1>Wega Veterinary Clinic</h1>
+            <img src="images/wega.png" alt="wega vet clinic" />
+            <p>Nairobi</p>
+            <p>★★★★★</p>
+            <p>Animal Nutrition . Deworming . Surgery</p>
+            <a href=""> View clinic</a>
+          </div>
         </div>
       </article>
 
@@ -101,16 +200,11 @@
         </ol>
       </div>
     </main>
-    
-   <footer>
-  <nav class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="clinics.html">Clinics</a>
-    <a href="search.html">Search</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</footer>
 
-
+    <footer>
+      <p>Vet-Connect | Nairobi, Kenya</p>
+      <p>Phone: +254 700 000 000 | Email: info@vetconnect.co.ke</p>
+      <p>&copy; Vet-Connect company ltd</p>
+    </footer>
   </body>
 </html>

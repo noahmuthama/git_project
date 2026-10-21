@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        nav {
+            background-color: black;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        h1, h2, form {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: blue;
+            color: white;
+            width: 250px;
+            padding: 12px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card a {
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 12px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="landingpage.html">Home</a>
+        <a href="accept.html">Services</a>
+        <a href="records.html">Records</a>
+        <a href="status.html">Status</a>
+    </nav>
+
+    <h1>Maji Mazuri Vet Clinic</h1>
+    <h2>Accepted your booking request</h2>
+    <p>You have a 50% discount on any service.</p>
+
+    <form>
+        <input type="text" placeholder="Search services">
+        <select>
+            <option>All</option>
+            <option>Check-up</option>
+            <option>Prevention</option>
+            <option>Procedures</option>
+            <option>Special care</option>
+        </select>
+        <button>Search</button>
+    </form>
+
+    <br>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Surgery</h3>
+            <img src="images/service4.jpg" alt="Surgery">
+            <p>Ksh 4,500 (50% off)</p>
+            <p>2 hrs</p>
+            <a href="service-details.html">Select</a>
+        </div>
+
+        <div class="card">
+            <h3>Deworming</h3>
+            <img src="images/service2.jpg" alt="Deworming">
+            <p>Ksh 1,500 (50% off)</p>
+            <p>20 min</p>
+            <a href="service-details.html">Select</a>
+        </div>
+
+        <div class="card">
+            <h3>Vaccination</h3>
+            <img src="images/service1.jpg" alt="Vaccination">
+            <p>Ksh 2,000 (50% off)</p>
+            <p>30 min</p>
+            <a href="service-details.html">Select</a>
+        </div>
+
+        <div class="card">
+            <h3>Consultation</h3>
+            <img src="images/service3.jpg" alt="Consultation">
+            <p>Ksh 1,000 (50% off)</p>
+            <p>30 min</p>
+            <a href="service-details.html">Select</a>
+        </div>
+
+        <div class="card">
+            <h3>Dental Cleaning</h3>
+            <img src="images/service5.jpg" alt="Dental Cleaning">
+            <p>Ksh 3,000 (50% off)</p>
+            <p>1 hr</p>
+            <a href="service-details.html">Select</a>
+        </div>
+
+        <div class="card">
+            <h3>Emergency Care</h3>
+            <img src="images/service6.jpg" alt="Emergency Care">
+            <p>Ksh 5,000 (50% off)</p>
+            <p>24 hrs</p>
+            <a href="service-details.html">Select</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Vet-Connect | Nairobi, Kenya</p>
+        <p>Phone: +254 700 000 000 | Email: info@vetconnect.co.ke</p>
+        <p>&copy; Vet-Connect company ltd</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client landing page </title>
+
+
+    <style>
+
+    .topnav{
+       
+         background-color: black;
+         color: white;
+         border: 20px solid black;
+         border-radius: 12px;
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         
+    }
+
+    .topnav a{
+        text-decoration: none;
+        color: white;
+        padding: 16px 16px ;
+    }
+
+    .topnav h4{
+        font-size: 24px;
+        padding: 0px 20px;
+        margin: 0;
+        
+
+    }
+
+    @media(max-width:600px){
+        
+            .topnav{border-width: 8px;
+        }
+        .topnav h4 {
+        width: 100%;
+        padding: 0 0 8px 0;
+    }
+
+    .topnav a {
+        padding: 8px 10px;
+    }
+
+        
+    }
+
+.next-button{
+    text-align: center;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: 5px solid blue;
+    border-radius: 12px;
+}
+    
+
+  
+
+    
+     .footer{
+    text-align: center;
+    position: relative;
+    top: 350px;
+}
+body{
+    margin: 20px;
+}
+</style>
+</head>
+
+
+<body>
+    <main>
+       <div>
+        <nav class="topnav">
+            <h4>Vet-Connect-clinic</h4>
+            <a href="sign-in.html">login</a>
+            <a href="accept.html">services</a>
+            <a href="records.html">records</a>
+            <a href="status.html">status</a>
+            
+        </nav>
+       </div> 
+       <br><br>
+
+       <h3>Welcome john </h3>
+
+       <section>
+        <div class="Welcome">
+            <p> Select your preferred service and get connected to the most reliable 
+                veterinary clinic on a click of a button
+            </p>
+            <label for="services">services</label>
+            <select name="services" id="services">
+                <option value="">select preferred service</option>
+                <option value="booking">book clinical visit</option>
+                <option value="farm-visit">Request farm-visit</option>
+                <option value="Emergency">Emergency</option>
+            </select>
+        </div>
+       </section>
+       <br>
+
+       <form action="matching.html" class="next-button">
+        <button >call Request</button>
+     </form>
+
+
+     <div style="text-align: center;
+                 background-color: blue;
+                 border-radius: 12px;
+                 color: white;">
+                 <p>How requests work</p>
+     
+     <p>-Every request is accompanied by the service selected</p>
+      <p>-The system matches you with the closest clinic and one which specializes in the treatment</p>
+     </div>  
+    </main>
+
+    <footer>
+    <p class="footer">&copy; property of Vet-connect company ltd </p>
+</footer>
+    
+</body>
+
+</html>
